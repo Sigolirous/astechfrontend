@@ -16,6 +16,7 @@
 }
 
 
+
 header{
     background: url(https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     grid-area: header;
@@ -455,6 +456,11 @@ html,body{
 }
 
 
+.captcha{
+    margin-bottom: 10px;
+}
+
+
 .emailForm form button{
     width: 50vw;
     height: auto;
@@ -683,11 +689,14 @@ html,body{
 
 /* mobile contact form */
 @media(max-width:480px){ 
+    .emailFormContainer{
+        width: 100vw;
+    }
     .emailForm{
         background: #A0AED9;
-        height: 100vh;
-        width: 80vw;
-        margin: 10px, auto, auto, 0px;
+        height: 120vh;
+        width: 100vw;
+        margin:0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -705,7 +714,7 @@ html,body{
     
     
     .emailForm form input{
-        width: 60vw;
+        width: 75vw;
         font-size: 14px;
         font-family: 'Roboto', sans-serif;
         margin-bottom: 10px;
@@ -717,7 +726,7 @@ html,body{
     
     
     .emailForm form select{
-        width: 60vw;
+        width: 75vw;
         font-size: 14px;
         font-family: 'Roboto', sans-serif;
         margin-bottom: 10px;
@@ -729,7 +738,7 @@ html,body{
     
     
     .emailForm form textarea{
-        width: 60vw;
+        width: 75vw;
         height: 50vh;
         font-size: 14px;
         margin-bottom: 10px;
