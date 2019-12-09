@@ -9,27 +9,27 @@ import coloredLogo from '../images/logo.svg'
 export default function Home(){
     return(
         <div className="container">
-            <header>
-                {/* Desktop menu */}
-                <nav>
-                    <img src={coloredLogo} alt="colored logo" className="navLogo"/>
-                    <div className="menuContent">
-                        <a href="/">| Home | </a>
-                        <a href="/projects">Projects | </a>
-                        <a href="/contact">Contact | </a>
-                    </div>
-                </nav>
-                {/* Mobile menu */}
-                <nav className="smallNav">
-                <a href="http://google.com"><img src={homeIcon} alt="Home icon"/></a>
-                <a href="http://google.com"><img src={productsIcon} alt="Products icon"/></a>
-                <a href="http://google.com"><img src={emailIcon} alt="Email icon"/></a>
-                </nav>
-                <h1>Augusto Sigolo</h1>
-                <p>Technological solutions to you</p>
-                <a href="#main"><img src={logo} alt="logo"/></a>
-                <div id='main'></div>
-            </header><br/>
+          <header>
+              {/* Desktop menu */}
+              <nav>
+                  <img src={coloredLogo} alt="colored logo" className="navLogo"/>
+                  <div className="menuContent">
+                      <a href="/">| Home | </a>
+                      <a href="/projects">Projects | </a>
+                      <a href="/contact">Contact | </a>
+                  </div>
+              </nav>
+              {/* Mobile menu */}
+              <nav className="smallNav">
+              <a href="/"><img src={homeIcon} alt="Home icon"/></a>
+              <a href="/projects"><img src={productsIcon} alt="Products icon"/></a>
+              <a href="/contact"><img src={emailIcon} alt="Email icon"/></a>
+              </nav>
+              <h1>Augusto Sigolo</h1>
+              <p>Technological solutions to you</p>
+               <a href="#main"><img src={logo} alt="logo" className="dropButton"/></a>
+              <div id="main"></div>
+          </header><br/>
             <main>
                 <h1>About My work:</h1>
                 <p>

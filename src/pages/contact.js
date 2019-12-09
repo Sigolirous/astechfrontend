@@ -7,6 +7,7 @@ import productsIcon from '../images/laptop.svg'
 import logo from '../images/logoBW.svg'
 import coloredLogo from '../images/logo.svg'
 import API from '../services/api'
+import Recaptcha from 'react-recaptcha'
 
 export default class Contact extends React.Component {
     constructor(props) {
@@ -47,35 +48,37 @@ export default class Contact extends React.Component {
                 projectId: params.id})
             }
         }
+        this.callbackRecaptcha = () => {
+            console.log('Recaptcha loaded')
+        }
       }
       componentDidMount(){
           this.urlHandle()
-          console.log(this.state)
       }
     render() {
         return (
         <div className="container">
-            <header>
-                {/* Desktop menu */}
-                <nav>
-                    <img src={coloredLogo} alt="colored logo" className="navLogo"/>
-                    <div className="menuContent">
-                        <a href="/">| Home | </a>
-                        <a href="/projects">Projects | </a>
-                        <a href="/contact">Contact | </a>
-                    </div>
-                </nav>
-                {/* Mobile menu */}
-                <nav className="smallNav">
-                <a href="http://google.com"><img src={homeIcon} alt="Home icon"/></a>
-                <a href="http://google.com"><img src={productsIcon} alt="Products icon"/></a>
-                <a href="http://google.com"><img src={emailIcon} alt="Email icon"/></a>
-                </nav>
-                <h1>Augusto Sigolo</h1>
-                <p>Technological solutions to you</p>
-                <a href="#main"><img src={logo} alt="logo"/></a>
-                <div id='main'></div>
-            </header><br/>
+           <header>
+              {/* Desktop menu */}
+              <nav>
+                  <img src={coloredLogo} alt="colored logo" className="navLogo"/>
+                  <div className="menuContent">
+                      <a href="/">| Home | </a>
+                      <a href="/projects">Projects | </a>
+                      <a href="/contact">Contact | </a>
+                  </div>
+              </nav>
+              {/* Mobile menu */}
+              <nav className="smallNav">
+              <a href="/"><img src={homeIcon} alt="Home icon"/></a>
+              <a href="/projects"><img src={productsIcon} alt="Products icon"/></a>
+              <a href="/contact"><img src={emailIcon} alt="Email icon"/></a>
+              </nav>
+              <h1>Augusto Sigolo</h1>
+              <p>Technological solutions to you</p>
+               <a href="#main"><img src={logo} alt="logo" className="dropButton"/></a>
+              <div ref={this.myRef}></div>
+          </header><br/>
             <main>
                <div className="emailFormContainer">
                     <div className="emailForm">
@@ -86,7 +89,7 @@ export default class Contact extends React.Component {
                                 <option value="problem">There is a problem with a project I bought from you!</option>
                                 <option value="chat">I just want to chat!</option>
                             </select>
-                            <textarea id="message" placeholder="What you want to tell me about it?" value={this.state.message} onChange={this.onChange}></textarea>
+                            <textarea id="message" placeholder="What you want to tell me about it?" value={this.state.message} onChange={this.onChange}></textarea><br/>
                             <input type="submit" onClick={this.submitEmail} value="Submit"/>
                         </form>
                     </div>

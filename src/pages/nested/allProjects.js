@@ -62,13 +62,13 @@ export default class AllProducts extends React.Component {
               </nav>
               {/* Mobile menu */}
               <nav className="smallNav">
-              <a href="http://google.com"><img src={homeIcon} alt="Home icon"/></a>
-              <a href="http://google.com"><img src={productsIcon} alt="Products icon"/></a>
-              <a href="http://google.com"><img src={emailIcon} alt="Email icon"/></a>
+              <a href="/"><img src={homeIcon} alt="Home icon"/></a>
+              <a href="/projects"><img src={productsIcon} alt="Products icon"/></a>
+              <a href="/contact"><img src={emailIcon} alt="Email icon"/></a>
               </nav>
               <h1>Augusto Sigolo</h1>
               <p>Technological solutions to you</p>
-               <a href="#main"><img src={logo} alt="logo"/></a>
+               <a href="#main"><img src={logo} alt="logo" className="dropButton"/></a>
               <div ref={this.myRef}></div>
           </header>
           <main>
@@ -83,7 +83,6 @@ export default class AllProducts extends React.Component {
           </aside>
           </div>
           <div className="cards">
-            {console.log(this.state.projects.slice(this.state.firstItem, this.state.lastItem))}
             {this.state.projects.slice(this.state.firstItem, this.state.lastItem).map(project=>{
               return(
                 <div className="productCard" key={project.productid}>
@@ -99,8 +98,8 @@ export default class AllProducts extends React.Component {
             })}
           </div>
           <div className="buttons">
-              <button value="Before" onClick={this.paginationBefore}>Before</button>
-              <button value="Next" onClick={this.paginationNext}>Next</button>
+              <button value="Before" onClick={this.paginationBefore}>&lt;&lt;</button>
+              <button value="Next" onClick={this.paginationNext}>&gt;&gt;</button>
           </div>
           </main>
           <footer>
