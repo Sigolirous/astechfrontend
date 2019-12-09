@@ -14,6 +14,8 @@ export default class AllProducts extends React.Component {
   }  
   state={
         projects:[],
+        firstItem:0,
+        lastItem: 4
       }
       tagChanger=(tag)=>{
         if(tag !== ''){
@@ -26,6 +28,14 @@ export default class AllProducts extends React.Component {
           })
         }
         
+      }
+      paginationNext = (e) => {
+        this.setState({firstItem: this.state.firstItem+5, lastItem: this.state.lastItem+5})
+        e.preventDefault() 
+      }
+      paginationBefore = (e) => {
+        this.setState({firstItem: this.state.firstItem-5, lastItem: this.state.lastItem-5})
+        e.preventDefault() 
       }
       scrollToMyRef = () => window.window.scrollTo(0, this.myRef.current.offsetTop)
       componentDidMount(){
@@ -73,7 +83,8 @@ export default class AllProducts extends React.Component {
           </aside>
           </div>
           <div className="cards">
-            {this.state.projects.map(project=>{
+            {console.log(this.state.projects.slice(this.state.firstItem, this.state.lastItem))}
+            {this.state.projects.slice(this.state.firstItem, this.state.lastItem).map(project=>{
               return(
                 <div className="productCard" key={project.productid}>
                   <img src={project.productimage} alt="project image"/>
@@ -86,6 +97,10 @@ export default class AllProducts extends React.Component {
                 </div>
               )
             })}
+          </div>
+          <div className="buttons">
+              <button value="Before" onClick={this.paginationBefore}>Before</button>
+              <button value="Next" onClick={this.paginationNext}>Next</button>
           </div>
           </main>
           <footer>

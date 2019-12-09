@@ -28,6 +28,7 @@
 header{
     background: url(https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     grid-area: header;
+    margin-top:0px;
     border-radius: 0px 0px 200px 200px;
     border-bottom: 90px;
 }
@@ -117,7 +118,7 @@ header nav a {
 
 .menuContent{
     margin-left: 35vw;
-    margin-top:5px;
+    margin-top:0px;
 }
 .menuContent a{
     font-size: 2vw;
@@ -343,7 +344,7 @@ html,body{
 .projectsContainer{
     display: grid;
     grid-template-columns: 1fr 90fr;
-    grid-template-rows: 100vh auto 6vh;
+    grid-template-rows: 100vh 100fr 6vh;
     grid-template-areas: "header header"
                          "aside institutional"
                          "footer footer";
@@ -352,9 +353,10 @@ html,body{
 .productCard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    height: 80vh;
     width: 30vw;
     float: left;
-    margin: 10px;
+    margin: 1vw;
   }
 
 .productCard img{
@@ -400,6 +402,11 @@ html,body{
     font-size: 10px;
     color: lightgrey;
     margin-left: 5px;
+}
+
+
+.cards{
+    /* height: 60vh; */
 }
 
 .oneProject{
@@ -572,4 +579,42 @@ html,body{
 
 .emailForm form button:hover{
     background: rgb(117, 10, 0);
+}
+
+
+.emailForm p{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.buttons{
+    margin-top:140vh;
+    margin-bottom: 50px;
+    margin-left:2vw;
+    width: 64vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button{
+    width: 10vw;
+    padding: 5px;
+    border: none;
+    margin:10px;
+    background: #A61B0F;
+    font-family: 'Podkova';
+    font-size: 2em;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}
+
+
+.buttons button:hover{
+    background: rgb(110, 18, 9);
+    font-family: 'Podkova';
+    color: white;
+    border: 3px solid #A0AED9
 }
