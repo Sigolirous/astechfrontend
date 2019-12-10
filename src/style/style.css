@@ -791,3 +791,148 @@ html,body{
         transform:rotate(90deg)
     }
 }
+
+
+/* Dashboard */
+
+.loginForm{
+    width: 15vw;
+    height: 100fr;
+    background: lightgray;
+    text-align: center;
+    margin:auto;
+    margin-top: 15%;
+}
+
+.loginForm input{
+    width: 10vw;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid red;
+    background: white;
+}
+
+.dashContainer{
+    display: grid;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15vh 100vh;
+    grid-template-areas: "header"
+                         "main";
+}
+
+.dashContainer .dashHeader{
+    grid-area: header;
+    background: rgb(180, 182, 180);
+}
+
+.dashContainer .dashMain{
+    grid-area: main;
+    background: white;
+}
+
+.dashHeader h1{
+    text-align: center;
+}
+
+.optionsCards{
+    width: 65vw;
+    height: 100vh;
+    margin-left: 17vw;
+}
+
+.optionCard{
+    color:white;
+    margin:10px 10px 10px 10px;
+    background: rgb(212, 209, 223);
+    padding: 5px;
+    width: 65vw;
+    height: 100fr;
+    text-align: center;
+    color: rgba(0,0,0);
+}
+
+.optionCard form{
+    width: 40vw;
+    margin:auto;
+    height: 100fr;
+}
+
+.optionCard form input[type=text]{
+    width: 30vw;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.optionCard form input[type=button]{
+    width: 15vw;
+    margin-top: 10px;
+    margin-bottom:10px;
+    cursor: pointer;
+    padding:10px;
+    background: rgb(155, 1, 1);
+    color: rgb(252, 252, 252);
+    font-weight: bold;
+    border:none;
+}
+
+
+.optionCard form input[type=button]:hover{
+    background: rgb(14, 155, 1);
+}
+
+
+.optionCard form p{
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+}
+
+.optionCard form textarea{
+    width: 30vw;
+    height: 50vh;
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+    box-sizing:content-box;
+}
+
+
+.optionCard a{
+    width: 15vw;
+    margin-top: 10px;
+    margin-bottom:10px;
+    cursor: pointer;
+    padding:10px;
+    background: rgb(155, 1, 1);
+    color: rgb(252, 252, 252);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.optionCard a:hover{
+    background: rgb(14, 155, 1);
+}
+
+
+@media(max-width:480px){
+    .optionCard form input[type=button]{
+        width: 40vw;
+        margin-top: 10px;
+        margin-bottom:10px;
+        cursor: pointer;
+        padding:10px;
+        background: rgb(155, 1, 1);
+        color: rgb(252, 252, 252);
+        font-weight: bold;
+        border:none;
+    }
+    .dashHeader h1{
+        font-size: 25px;
+    }
+
+}
