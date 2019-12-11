@@ -49,9 +49,9 @@ export default function Home(){
                         <li>Radio</li>
                     </div>
                     <div className="skill">
-                        <h2>Electronics:</h2>
-                        <li>Arduino</li>
-                        <li>Radio</li>
+                        <h2>Marketing:</h2>
+                        <li>Email marketing</li>
+                        <li>Social media marketing with bots</li>
                     </div>
                 </div>
             </main>

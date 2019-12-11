@@ -195,16 +195,25 @@ aside button:hover{
 }
 
 .skillsBoard{
-    margin-left: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100vw;
+    height: 100fr;
+    justify-content: center;
+    align-content: space-between;
 }
 
 
 .skill{
     margin-left:30px;
     margin-bottom: 30px;
-    width: 20vw;
-    height: 30vh;
-    float:left
+    width: 100fr;
+    min-width: 20vw;
+    height: 100fr;
+    min-height: 30vh;
+    float:left;
 }
 
 
@@ -521,12 +530,12 @@ html,body{
 
 /* Institutional mobile */
 @media (max-width:480px){
-    /* .skillsBoard{
-        margin-left: none;
-    } */
+    .skillsBoard{
+        flex-flow: column wrap;
+    }
     .skill{
         border:none;
-        margin-bottom:50px;
+        margin:10%;
         text-align: left;
         float:none;
     }
