@@ -29,10 +29,24 @@ export default class dashBoard extends React.Component {
             API.post(`/changeProduct?change=${change}`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
                 if(res.data.status != "succes"){
                     alert("Something wrong happened. Try to log in again or contact me")
-                    console.log(res.data.status)
+                    this.setState({
+                        productId:undefined,
+                        newProductName: undefined,
+                        newProductImage: undefined,
+                        newProductInfo: undefined,
+                        newProductTag:undefined,
+                        newProductPrice: undefined
+                    })
                 }else{
                     alert("Changed")
-                    console.log(res.data.status)
+                    this.setState({
+                        productId:undefined,
+                        newProductName: undefined,
+                        newProductImage: undefined,
+                        newProductInfo: undefined,
+                        newProductTag:undefined,
+                        newProductPrice: undefined
+                    })
                 }
             })
         }
@@ -40,9 +54,24 @@ export default class dashBoard extends React.Component {
             API.post(`/addProduct`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
                 if(res.data.status != "succes"){
                     alert(`Error: ${res.data.error}`)
-                    console.log(res.data)
+                    this.setState({
+                        productName: undefined,
+                        productImage: undefined,
+                        productInfo: undefined,
+                        productTag:undefined,
+                        productPrice: undefined,
+                        productId:undefined,
+                    })
                 }else{
                     alert("Add")
+                    this.setState({
+                        productName: undefined,
+                        productImage: undefined,
+                        productInfo: undefined,
+                        productTag:undefined,
+                        productPrice: undefined,
+                        productId:undefined,
+                    })
                 }
             })
         }
@@ -50,9 +79,14 @@ export default class dashBoard extends React.Component {
             API.post(`/deleteProduct`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
                 if(res.data.status != "succes"){
                     alert(`Error: ${res.data.error}`)
+                    this.setState({
+                        productId:undefined,
+                    })
                 }else{
                     alert("Deleted")
-                    console.log(res.data)
+                    this.setState({
+                        productId:undefined,
+                    })
                 }
             })
         }

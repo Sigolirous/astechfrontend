@@ -257,7 +257,7 @@ html,body{
 .productCard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    height: 80vh;
+    height: 100fr;
     width: 30vw;
     float: left;
     margin: 1vw;

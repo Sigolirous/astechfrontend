@@ -77,8 +77,8 @@ export default class AllProducts extends React.Component {
             <aside>
               <h3>Tags:</h3>
               <button onClick={(e)=>this.tagChanger('')}>All</button>
-              <button onClick={(e)=>this.tagChanger('caixa')}>Site</button>
-              <button onClick={(e)=>this.tagChanger('foto')}>Personal Pages</button>
+              <button onClick={(e)=>this.tagChanger('site')}>Site</button>
+              <button onClick={(e)=>this.tagChanger('personal')}>Personal Pages</button>
               <button>Twitter bots</button>
           </aside>
           </div>

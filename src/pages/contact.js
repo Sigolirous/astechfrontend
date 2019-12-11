@@ -22,6 +22,7 @@ export default class Contact extends React.Component {
                 autenticated:false,
                 captchaInstanse:undefined
         };
+        this.myRef = React.createRef()
         this.submitEmail = (e) => {
             if(this.state.autenticated === true){
                 API.post('/sendMail', this.state).then((res)=>{
@@ -69,9 +70,14 @@ export default class Contact extends React.Component {
                 this.setState({autenticated: true})
             }
         }
+        this.scrollToMyRef = () => window.window.scrollTo(0, this.myRef.current.offsetTop)
       }
       componentDidMount(){
           this.urlHandle()
+          this.scrollToMyRef()
+      }
+      componentDidUpdate(){
+        this.scrollToMyRef()
       }
     render() {
         return (
@@ -95,7 +101,7 @@ export default class Contact extends React.Component {
               <h1>Augusto Sigolo</h1>
               <p>Technological solutions to you</p>
                <a href="#main"><img src={logo} alt="logo" className="dropButton"/></a>
-              <div ref={this.myRef}></div>
+              <div id="main" ref={this.myRef}></div>
           </header><br/>
             <main>
                <div className="emailFormContainer">
