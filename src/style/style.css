@@ -18,7 +18,7 @@
 
 
 header{
-    background: url(https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: url('../images/background.jpeg');
     grid-area: header;
     margin-top:0px;
     border-radius: 0px 0px 200px 200px;
