@@ -79,7 +79,8 @@ export default class AllProducts extends React.Component {
               <button onClick={(e)=>this.tagChanger('')}>All</button>
               <button onClick={(e)=>this.tagChanger('site')}>Site</button>
               <button onClick={(e)=>this.tagChanger('personal')}>Personal Pages</button>
-              <button>Twitter bots</button>
+              <button onClick={(e)=>this.tagChanger('bots')}>Social Media Bots</button>
+              <button onClick={(e)=>this.tagChanger('query')}>Social Media Bots</button>
           </aside>
           </div>
           <div className="cards">
