@@ -12,11 +12,13 @@ export default class dashBoard extends React.Component {
             productTag:undefined,
             productPrice: undefined,
             productId:undefined,
+            productLink:undefined,
             newProductName: undefined,
             newProductImage: undefined,
             newProductInfo: undefined,
             newProductTag:undefined,
-            newProductPrice: undefined
+            newProductPrice: undefined,
+            newProductLink:undefined,
          }
         this.onChange = (e) => {
             const cState = Object.assign({}, this.state)
@@ -29,24 +31,8 @@ export default class dashBoard extends React.Component {
             API.post(`/changeProduct?change=${change}`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
                 if(res.data.status != "succes"){
                     alert("Something wrong happened. Try to log in again or contact me")
-                    this.setState({
-                        productId:undefined,
-                        newProductName: undefined,
-                        newProductImage: undefined,
-                        newProductInfo: undefined,
-                        newProductTag:undefined,
-                        newProductPrice: undefined
-                    })
                 }else{
                     alert("Changed")
-                    this.setState({
-                        productId:undefined,
-                        newProductName: undefined,
-                        newProductImage: undefined,
-                        newProductInfo: undefined,
-                        newProductTag:undefined,
-                        newProductPrice: undefined
-                    })
                 }
             })
         }
@@ -54,24 +40,8 @@ export default class dashBoard extends React.Component {
             API.post(`/addProduct`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
                 if(res.data.status != "succes"){
                     alert(`Error: ${res.data.error}`)
-                    this.setState({
-                        productName: undefined,
-                        productImage: undefined,
-                        productInfo: undefined,
-                        productTag:undefined,
-                        productPrice: undefined,
-                        productId:undefined,
-                    })
                 }else{
                     alert("Add")
-                    this.setState({
-                        productName: undefined,
-                        productImage: undefined,
-                        productInfo: undefined,
-                        productTag:undefined,
-                        productPrice: undefined,
-                        productId:undefined,
-                    })
                 }
             })
         }
@@ -150,6 +120,16 @@ export default class dashBoard extends React.Component {
                             </form>
                         </div>
                         <div className="optionCard">
+                            <h1>Change product link</h1>
+                            <form>
+                                <p>New product link:</p>
+                                <textarea id="newProductLink" onChange={this.onChange}/>
+                                <p>Product Id:</p>
+                                <input type="text" id="productId" onChange={this.onChange}/>
+                                <input type="button" value="Change" onClick={(e)=>{this.handleSubmit('info')}}/>
+                            </form>
+                        </div>
+                        <div className="optionCard">
                             <h1>Add new product</h1>
                             <form>
                                 <p>New product name:</p>
@@ -162,6 +142,8 @@ export default class dashBoard extends React.Component {
                                 <input type="text" id="productImage" onChange={this.onChange}/>
                                 <p>New product info:</p>
                                 <textarea id="productInfo" onChange={this.onChange}/>
+                                <p>New product link:</p>
+                                <input type="text" id="productLink" onChange={this.onChange}/>
                                 <p>Product Id:</p>
                                 <input type="text" id="productId" onChange={this.onChange}/>
                                 <input type="button" value="Add"  onClick={this.handleAdd}/>

@@ -56,6 +56,7 @@ export default class OneProject extends React.Component {
                             <img src={project.productimage} alt="project image"/>
                             <h2>About the project:</h2>
                             <p>{project.productinfo}</p>
+                            <h2><b><a href={`${project.productlink}`}>Click here to see the project running</a></b></h2>
                             <h2>Price:<b><a href={`/contact?order=yes&id=${project.productid}`}>${project.productprice}</a></b></h2><br/>
                             <br/>
                             <a href="/projects" className="backButton"> &#60;&#60; Back</a>
