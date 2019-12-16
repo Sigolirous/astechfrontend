@@ -33,7 +33,8 @@ export default function Home(){
             <main>
                 <h1>About My work:</h1>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Hello, my name is Augusto Sigolo.<br/>
+                I started programming very young, around the age of 10 when I had my first contact with the "C" language. Since then I have been experimenting with a wide range of languages and nowadays I work especially with Python and Javascript (NodeJs and react), as well as developing Wordpress projects. That's why task automation and web design are my strengths within software development. However, over time, I also developed skills with graphic design, marketing (email, social media, etc) and data query. See everything I've done in the <a href="/projects"><b>projects</b></a> section and <a href="/contact"><b>contact</b></a> me. It will be a pleasure to develop a project made especially for you.
                 </p><br/><br/>
                 <div className="skillsBoard">
                     <div className="skill">
@@ -41,7 +42,7 @@ export default function Home(){
                         <li>Python</li>
                         <li>Javascript</li>
                         <li>React</li>
-                        <li>Twitter Bots</li>
+                        <li>Social Media Bots</li>
                     </div>
                     <div className="skill">
                         <h2>Electronics:</h2>
@@ -52,6 +53,7 @@ export default function Home(){
                         <h2>Marketing:</h2>
                         <li>Email marketing</li>
                         <li>Social media marketing with bots</li>
+                        <li>Data query</li>
                     </div>
                 </div>
             </main>
