@@ -24,15 +24,31 @@ export default class dashBoard extends React.Component {
             const cState = Object.assign({}, this.state)
             const field = e.target.id
             cState[field] = e.target.value
-            this.setState(cState) 
+            this.setState(cState)     
         }
         this.handleSubmit = (change) =>{
             // console.log(this.state.token)
             API.post(`/changeProduct?change=${change}`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
                 if(res.data.status != "succes"){
                     alert("Something wrong happened. Try to log in again or contact me")
+                    this.setState({
+                        newProductName: undefined,
+                        newProductImage: undefined,
+                        newProductInfo: undefined,
+                        newProductTag:undefined,
+                        newProductPrice: undefined,
+                        newProductLink:undefined,
+                    })
                 }else{
                     alert("Changed")
+                    this.setState({
+                        newProductName: undefined,
+                        newProductImage: undefined,
+                        newProductInfo: undefined,
+                        newProductTag:undefined,
+                        newProductPrice: undefined,
+                        newProductLink:undefined,
+                    })
                 }
             })
         }
@@ -40,10 +56,27 @@ export default class dashBoard extends React.Component {
             API.post(`/addProduct`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
                 if(res.data.status != "succes"){
                     alert(`Error: ${res.data.error}`)
+                    this.setState({
+                        productName: undefined,
+                        productImage: undefined,
+                        productInfo: undefined,
+                        productTag:undefined,
+                        productPrice: undefined,
+                        productId:undefined,
+                        productLink:undefined,
+                    })
                 }else{
                     alert("Add")
-                }
-            })
+                    this.setState({
+                        productName: undefined,
+                        productImage: undefined,
+                        productInfo: undefined,
+                        productTag:undefined,
+                        productPrice: undefined,
+                        productId:undefined,
+                        productLink:undefined,
+                    })
+            }})
         }
         this.handleDelete = ()=>{
             API.post(`/deleteProduct`, this.state, {headers: {Authorization: `Bearer ${this.state.token}`}}).then((res)=>{
@@ -123,10 +156,10 @@ export default class dashBoard extends React.Component {
                             <h1>Change product link</h1>
                             <form>
                                 <p>New product link:</p>
-                                <input id="newProductLink" onChange={this.onChange}/>
+                                <input type="text" id="productLink" onChange={this.onChange}/>
                                 <p>Product Id:</p>
                                 <input type="text" id="productId" onChange={this.onChange}/>
-                                <input type="button" value="Change" onClick={(e)=>{this.handleSubmit('info')}}/>
+                                <input type="button" value="Change" onClick={(e)=>{this.handleSubmit('link')}}/>
                             </form>
                         </div>
                         <div className="optionCard">
