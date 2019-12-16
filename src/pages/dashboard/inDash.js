@@ -123,7 +123,7 @@ export default class dashBoard extends React.Component {
                             <h1>Change product link</h1>
                             <form>
                                 <p>New product link:</p>
-                                <textarea id="newProductLink" onChange={this.onChange}/>
+                                <input id="newProductLink" onChange={this.onChange}/>
                                 <p>Product Id:</p>
                                 <input type="text" id="productId" onChange={this.onChange}/>
                                 <input type="button" value="Change" onClick={(e)=>{this.handleSubmit('info')}}/>
